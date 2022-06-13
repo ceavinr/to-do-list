@@ -1,0 +1,229 @@
+body {
+    height: 100vh;
+    width: 100%;
+    background: white;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  
+  .container {
+    position:absolute;
+    left:calc(50% - 2rem);
+    top:50%;
+    margin-left: calc(-400px - 2rem);
+    margin-top: calc(-200px);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container > div {
+    width: 400px;
+    height: 500px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    padding: 25px;
+  }
+  
+  h1 {
+    font-weight: 1000;
+    text-align: center;
+    color: white;
+  }
+  
+  .container .add-input {
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .add-input input {
+    width: 85%;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    border-radius: 5px;
+    padding-left: 15px;
+  }
+  
+  .add-input input:focus {
+    background-color: #ccc;
+  }
+  
+  .add-input button {
+    width: 60px;
+    border: none;
+    color: black;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 2px;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .add-input button.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .add-input button.active:hover {
+    opacity: 0.8;
+  }
+  
+  .container .todolist {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .container .note {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  
+  .todolist li {
+    list-style: none;
+    height: 45px;
+    width: 310px;
+    line-height: 45px;
+    position: relative;
+    background: rgb(63, 62, 62);
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 0 45px;
+    cursor: default;
+  }
+
+  .todolist, .note {
+    padding-inline-start: 0;
+  }
+
+  .note li {
+    list-style: none;
+    height: 45px;
+    width: 370px;
+    line-height: 45px;
+    position: relative;
+    background: rgb(63, 62, 62);
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 0 15px;
+    cursor: default;
+  }
+  
+  .striketrough {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  
+  li .fa-solid.fa-plus {
+    position: absolute;
+    right: 0px;
+    padding-top: 14px;
+    width: 45px;
+    height: 31px;
+    text-align: center;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transform: rotate(45deg);
+  }
+  
+  li .fas.fa-circle {
+    position: absolute;
+    left: 0px;
+    padding-top: 14px;
+    width: 45px;
+    height: 31px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  li .fas.fa-check-circle {
+    position: absolute;
+    left: 0px;
+    padding-top: 14px;
+    width: 45px;
+    height: 31px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  li .fa-solid.fa-plus:hover, li .fas.fa-circle:hover, li .fas.fa-check-circle:hover {
+    opacity: 0.8;
+  }
+  
+  .container .info {
+    position: absolute;
+    display: flex;
+    width: 400px;
+    bottom: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+    cursor: default;
+    align-items: center;
+  }
+  
+  .info button {
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 2px;
+    padding: 5px 10px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .info button.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .info button.active:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 490px) {
+    h1 {
+      font-size: 40px;
+    }
+  
+    .container {
+      width: 250px;
+    }
+  
+    .add-input input,
+    .add-input button,
+    .add-input .info,
+    .add-input button {
+      font-size: 16px;
+    }
+  
+    .todolist li {
+      width: 160px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .container {
+      width: 180px;
+    }
+  
+    .add-input input,
+    .add-input button,
+    .add-input .info,
+    .add-input button {
+      font-size: 16px;
+    }
+  
+    .todolist li {
+      width: 90px;
+    }
+  }

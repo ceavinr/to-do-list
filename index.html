@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="to-do-list-container">
+        <h2>To-do-lists</h2>
+        <form class="add-input">
+          <input
+            type="text"
+            name=""
+            id="input-box-todo"
+            placeholder="Add task"
+          />
+          <button id="add-btn-todo"><i class="fas fa-plus"></i></button>
+        </form>
+        <ul class="todolist"></ul>
+        <div class="info">
+          <span
+            >You have <span class="pendingNumber"></span> pending
+            <span class="pendingText"></span
+          ></span>
+          <button id="clear-all-todo">Clear All</button>
+        </div>
+      </div>
+      <div class="note-container">
+        <h2>Notes</h2>
+        <form class="add-input">
+          <input
+            type="text"
+            name=""
+            id="input-box-note"
+            placeholder="Add note"
+          />
+          <button id="add-btn-note"><i class="fas fa-plus"></i></button>
+        </form>
+        <ul class="note"></ul>
+        <div class="info">
+          <span
+            >You have <span class="totalNumber"></span>
+            <span class="totalText"></span
+          ></span>
+          <button id="clear-all-note">Clear All</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
