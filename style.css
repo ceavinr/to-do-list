@@ -190,13 +190,18 @@ body {
     opacity: 0.8;
   }
   
-  @media (max-width: 490px) {
-    h1 {
-      font-size: 40px;
-    }
-  
+  @media (max-width: 1024px) {
     .container {
-      width: 250px;
+      display: flex;
+      flex-wrap: wrap;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 100px;
+      justify-content: center;
+    }
+    .container > div{
+      width: 40rem;
     }
   
     .add-input input,
@@ -210,12 +215,28 @@ body {
       width: 160px;
     }
   }
-  
-  @media (max-width: 360px) {
-    .container {
-      width: 180px;
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 40px;
     }
   
+    .container > div{
+      width: 20rem;
+    }
+    .add-input input,
+    .add-input button,
+    .add-input .info,
+    .add-input button {
+      font-size: 16px;
+    }
+  
+    .todolist li {
+      width: 160px;
+    }
+  }
+  
+  @media (max-width: 360px) {
     .add-input input,
     .add-input button,
     .add-input .info,
