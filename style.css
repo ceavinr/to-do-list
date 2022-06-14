@@ -90,13 +90,10 @@ body {
   }
   
   li {
-    display: grid;
+    display: flex;
     position: relative;
-    grid-template-columns: auto 1fr auto;
     list-style: none;
-    height: 45px;
     width: 100%;
-    line-height: 45px;
     position: relative;
     background: rgb(63, 62, 62);
     border-radius: 3px;
@@ -104,8 +101,13 @@ body {
     align-items: center;
     margin-bottom: 8px;
     cursor: default;
+    justify-content: flex-start;
   }
 
+  li div {
+    inline-size: 308px;
+    word-wrap: break-word;
+  }
   .todolist, .note {
     padding-inline-start: 0;
   }
@@ -116,10 +118,13 @@ body {
   }
   
   li .fa-solid.fa-times {
+    display: flex;
     right: 0px;
     width: 45px;
-    height: 31px;
+    height: 30px;
+    justify-content: center;
     text-align: center;
+    align-items: center;
     border-radius: 0 3px 3px 0;
     cursor: pointer;
   }
@@ -190,7 +195,9 @@ body {
     .container > div{
       width: 40rem;
     }
-  
+    li div {
+      inline-size: 548px;
+    }
     .add-input input,
     .add-input button,
     .add-input .info,
@@ -203,7 +210,9 @@ body {
     h1 {
       font-size: 40px;
     }
-  
+    li div {
+      inline-size: 227px;
+    }
     .container > div{
       width: 20rem;
     }
