@@ -3,6 +3,9 @@ body {
     width: 100%;
     background: white;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./img/bg.jpg") no-repeat fixed center ;
+    background-size: cover;
+    /* background-blend-mode: darken; */
   }
   
   .container {
@@ -31,15 +34,16 @@ body {
     color: white;
   }
   
-  .container .add-input {
-    display: flex;
+  form {
+    display: grid;
+    grid-template-columns: 1fr auto;
     height: 45px;
     width: 100%;
     margin: 20px 0;
+    gap: 0.5rem;
   }
   
   .add-input input {
-    width: 85%;
     border: 1px solid #ccc;
     font-size: 17px;
     border-radius: 5px;
@@ -51,13 +55,12 @@ body {
   }
   
   .add-input button {
-    width: 60px;
+    width: 50px;
     border: none;
     color: black;
     font-size: 22px;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 2px;
     opacity: 0.5;
     pointer-events: none;
   }
@@ -86,34 +89,25 @@ body {
     background: transparent; /* Optional: just make scrollbar invisible */
   }
   
-  .todolist li {
+  li {
+    display: grid;
+    position: relative;
+    grid-template-columns: auto 1fr auto;
     list-style: none;
     height: 45px;
-    width: 310px;
+    width: 100%;
     line-height: 45px;
     position: relative;
     background: rgb(63, 62, 62);
     border-radius: 3px;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 8px;
-    padding: 0 45px;
     cursor: default;
   }
 
   .todolist, .note {
     padding-inline-start: 0;
-  }
-
-  .note li {
-    list-style: none;
-    height: 45px;
-    width: 370px;
-    line-height: 45px;
-    position: relative;
-    background: rgb(63, 62, 62);
-    border-radius: 3px;
-    margin-bottom: 8px;
-    padding: 0 15px;
-    cursor: default;
   }
   
   .striketrough {
@@ -121,46 +115,39 @@ body {
     opacity: 0.5;
   }
   
-  li .fa-solid.fa-plus {
-    position: absolute;
+  li .fa-solid.fa-times {
     right: 0px;
-    padding-top: 14px;
     width: 45px;
     height: 31px;
     text-align: center;
     border-radius: 0 3px 3px 0;
     cursor: pointer;
-    transform: rotate(45deg);
   }
   
   li .fas.fa-circle {
-    position: absolute;
     left: 0px;
-    padding-top: 14px;
+    padding-top: 15px;
     width: 45px;
-    height: 31px;
+    height: 30px;
     text-align: center;
     cursor: pointer;
   }
   
   li .fas.fa-check-circle {
-    position: absolute;
     left: 0px;
-    padding-top: 14px;
+    padding-top: 15px;
     width: 45px;
-    height: 31px;
+    height: 30px;
     text-align: center;
     cursor: pointer;
   }
   
-  li .fa-solid.fa-plus:hover, li .fas.fa-circle:hover, li .fas.fa-check-circle:hover {
+  li .fa-solid.fa-times:hover, li .fas.fa-circle:hover, li .fas.fa-check-circle:hover {
     opacity: 0.8;
   }
   
   .container .info {
-    position: absolute;
     display: flex;
-    width: 400px;
     bottom: 20px;
     margin-top: 20px;
     justify-content: space-between;
@@ -210,10 +197,6 @@ body {
     .add-input button {
       font-size: 16px;
     }
-  
-    .todolist li {
-      width: 160px;
-    }
   }
 
   @media (max-width: 600px) {
@@ -230,10 +213,6 @@ body {
     .add-input button {
       font-size: 16px;
     }
-  
-    .todolist li {
-      width: 160px;
-    }
   }
   
   @media (max-width: 360px) {
@@ -242,9 +221,5 @@ body {
     .add-input .info,
     .add-input button {
       font-size: 16px;
-    }
-  
-    .todolist li {
-      width: 90px;
     }
   }

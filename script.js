@@ -83,7 +83,7 @@ function showNotes() {
 
   let newNote = "";
   notes.forEach((element, index) => {
-    newNote += `<li id="${index}"></span> ${element} <span onclick="removeItem('note', ${index})"><i class="fa-solid fa-plus"></i></span></li>`;
+    newNote += `<li id="${index}"></span><span><i class="fas fa-circle"></i></span> <span>${element}</span> <span onclick="removeItem('note', ${index})"><i class="fa-solid fa-times"></i></span></li>`;
   });
   note.innerHTML = newNote;
   inputBoxNote.value = null;
@@ -114,10 +114,10 @@ function showTasks() {
 
   let newTask = "";
   done.forEach((element, index) => {
-    newTask += `<li id="${index}"><span onclick="taskUndone(${index})"><i class="fas fa-check-circle"></i></span> <span class="striketrough">${element}</span> <span onclick="removeDone(${index})"><i class="fa-solid fa-plus"></i></span></li>`;
+    newTask += `<li id="${index}"><span onclick="taskUndone(${index})"><i class="fas fa-check-circle"></i></span> <span class="striketrough">${element}</span> <span onclick="removeDone(${index})"><i class="fa-solid fa-times"></i></span></li>`;
   });
   todos.forEach((element, index) => {
-    newTask += `<li id="${index}"><span onclick="taskDone(${index})"><i class="fas fa-circle"></i></span> ${element} <span onclick="removeItem('todo',${index})"><i class="fa-solid fa-plus"></i></span></li>`;
+    newTask += `<li id="${index}"><span onclick="taskDone(${index})"><i class="fas fa-circle"></i></span> <span>${element}</span> <span onclick="removeItem('todo',${index})"><i class="fa-solid fa-times"></i></span></li>`;
   });
   todolist.innerHTML = newTask;
   inputBoxTodo.value = null;
